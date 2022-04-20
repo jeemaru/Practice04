@@ -20,32 +20,17 @@ public class Ex07 {
 		wonArray[8] = 5;
 		wonArray[9] = 1;
 		
-		System.out.println("금액: ");
+		System.out.print("금액: ");
 		int won = sc.nextInt();
-		
-		while (true) {
-			for(int i=1; i<=1; i++)
-			if(wonArray[0]<=won) {
-				System.out.println("50000원: "+i+"개");
-			}else if(wonArray[1]<=won) {
-				System.out.println("10000원: "+i+"개");
-			}else if(wonArray[2]<=won) {
-				System.out.println("5000원: "+i+"개");
-			}else if(wonArray[3]<=won) {
-				System.out.println("1000원: "+i+"개");
-			}else if(wonArray[4]<=won) {
-				System.out.println("500원: "+i+"개");
-			}else if(wonArray[5]<=won) {
-				System.out.println("100원: "+i+"개");
-			}else if(wonArray[6]<=won) {
-				System.out.println("50원: "+i+"개");
-			}else if(wonArray[7]<=won) {
-				System.out.println("10원: "+i+"개");
-			}continue;
-			
-			
-		}
-		
-	}
 
+			for(int i=0; i<wonArray.length; i++) {
+				if (won/wonArray[i]>=0) {
+					System.out.println(wonArray[i]+"원: "+won/wonArray[i]+"개");
+					//해당값을 나누고 나머지값은 추가로 나눠서 갯수를 따짐
+					won = won%wonArray[i]; // 총 9번 반복해서 마지막 1의자리까지 전부 나눔
+				}
+			}
+		sc.close();	
+			
+	}
 }
